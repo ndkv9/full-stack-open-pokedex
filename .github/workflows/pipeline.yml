@@ -43,6 +43,7 @@ jobs:
           checkstring: 'ok'
           delay: 5
           rollbackonhealthcheckfailed: true
+      - uses: actions/checkout@v2
       - name: bump version and push tag
         if: ${{ github.event_name == 'push' }}
         uses: anothrNick/github-tag-action@1.33.0
@@ -50,3 +51,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
+          DRY_RUN: true
