@@ -10,7 +10,7 @@ describe('Pokedex', () => {
     )
   })
 
-  it('can navigate from frontpage to a particular Pokemon page', () => {
+  it('can navigate from landingpage to a particular Pokemon page', () => {
     cy.contains('ivysaur').click()
     cy.contains(/chlorophyll/i)
   })
